@@ -1,0 +1,30 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "Hello"
+
+Interact:
+  Script:
+    - if player.inventory.contains#PoisonedMeat
+    - chat "I assure you that poison is strong enough to kill any beast!"
+
+    - elseif player.inventory.contains#Meat
+    - chat "Of course... I will use my strongest poison on this meat... There! Anything that eats this meat will die. Be careful!"
+    - give PoisonedMeat
+
+    - elseif player.inventory.contains#MageKnowledge
+    - chat "A Demon guarded by a dog... Darius will be far too wise to consume anything you give him... But if you can get the dog to consume one of my poisons..."
+
+    - elseif player.inventory.contains#DemonKnowledge
+    - chat "My knowledge is of potions and not Demons... Seek the Mage in the house on the edge of town."
+
+    - else
+    - chat "While out gathering ingredients I had sensed something wrong... I returned home immediately."
+
+While:
+  Script:
+    - if entity.inprox
+    - look
+    - attack
+    - else
+    - idle

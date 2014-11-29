@@ -1,0 +1,20 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - if player.inventory.contains#BlessedSword
+    - chat "That sword... Where did you get it?!"
+    - finish
+    - delaychat "You swing the sword striking down Darius in a single blow..."
+
+    - elseif player.inventory.contains#Sword
+    - chat "You swing the Sword and it strikes Darius flesh... But causes no damage, you are struck down immediately."
+    - fail
+
+    - else
+    - chat "You swing your sword at Darius and it breaks across his flesh... He laughs as he rips your heart from your chest."
+    - fail
+
+While:
+  Scipt:
+    - idle
+    - look

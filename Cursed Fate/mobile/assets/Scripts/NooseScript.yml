@@ -1,0 +1,9 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "A noose swings in the breeze..."
+
+Interact:
+  Script:
+    - chat "You place your neck in the noose... and pull the lever..."
+    - changescene Hades

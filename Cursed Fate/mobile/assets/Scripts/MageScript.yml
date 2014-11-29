@@ -1,0 +1,24 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "Greetings Warrior..."
+
+Interact:
+  Script:
+    - if player.inventory.contains#MageKnowledge
+    - chat "Guarded by his dog... Darius grows more powerful... You must confront him in the depths of Hades... How... I do not know!"
+
+    - elseif player.inventory.contains#DemonKnowledge
+    - chat "Darius... He waits for his strength to grow in the depths of Hades... His three headed dog guards him... He must be stopped!"
+    - give MageKnowledge
+
+    - else
+    - chat "Clouds have gathered of the grave of Darius... Go now to the grave and find what is there!"
+
+While:
+  Script:
+    - if entity.inprox
+    - look
+    - attack
+    - else
+    - idle

@@ -1,0 +1,30 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "Hello"
+
+Interact:
+  Script:
+    - if player.inventory.contains#BlessedSword
+    - chat "I have given the Sword my Blessings! It is now up to you to strike down the Demon."
+
+    - elseif player.inventory.contains#Sword
+    - chat "A Sword... of the finest quality! I lay my blessings on this sword... May it strike down all Darkness!"
+    - give BlessedSword
+
+    - elseif player.inventory.contains#MageKnowledge
+    - chat "Demons are extremely powerful and the sword you hold is not strong enough... You will need a sword of steel, if you find one I can bless it."
+
+    - elseif player.inventory.contains#DemonKnowledge
+    - chat "Darius has returned! Gods help us all now... The only person with knowledge of such Dark Arts is the Mage"
+
+    - else
+    - chat "I've sensed something... Unholy. I cannot leave the Temple for I have duties. You must seek out the darkness."
+
+While:
+  Script:
+    - if entity.inprox
+    - look
+    - attack
+    - else
+    - idle

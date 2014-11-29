@@ -1,0 +1,24 @@
+Proximity:
+  Distance: 8
+  Enter:
+    - if player.inventory.contains#KilledDog
+    - chat "The body of Cerberus lies here..."
+
+    - elseif player.inventory.contains#PoisonedMeat
+    - chat "You toss the meat to the dog and one head greedily eats it. The poison visibly takes effect right away... The dog convulses and dies."
+    - die
+    - give KilledDog
+
+    - elseif player.inventory.contains#Meat
+    - chat "As you attempt to distract the dog with the meat. One head greedily consume the meat while the other two eat you."
+    - fail
+
+    - else
+    - chat "You feebly attempt to swing your sword at one of the heads... But are ripped to shreds by the other two."
+    - fail
+
+While:
+  Script:
+    - if player.inventory.contains#KilledDog.!
+    - idle
+    - look

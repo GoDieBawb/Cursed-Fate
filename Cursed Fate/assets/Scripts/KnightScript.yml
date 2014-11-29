@@ -1,0 +1,30 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "Hello"
+
+Interact:
+  Script:
+    - if player.inventory.contains#BlessedSword
+    - chat "The sword has been blessed! The Demon will not be able to stand up to a sword of such power!"
+
+    - elseif player.inventory.contains#Sword
+    - chat "That sword is strong enough even for almost any foe... But for a Demon, it will surely need to be blessed again."
+
+    - elseif player.inventory.contains#MageKnowledge
+    - chat "A Demon.. My father fought Demons long ago... I'm only half the warrior he was. He left me this sword... You may take it."
+    - give Sword
+
+    - elseif player.inventory.contains#DemonKnowledge
+    - chat "That Demon has returned... Inform the Mage."
+
+    - else
+    - chat "Something hasn't felt right lately... I haven't been able to take a look around. Maybe you can."
+
+While:
+  Script:
+    - if entity.inprox
+    - look
+    - attack
+    - else
+    - idle

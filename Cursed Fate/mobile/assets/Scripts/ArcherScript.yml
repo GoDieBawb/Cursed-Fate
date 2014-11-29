@@ -1,0 +1,30 @@
+Proximity:
+  Distance: 3
+  Enter:
+    - chat "Hello"
+
+Interact:
+  Script:
+    - if player.inventory.contains#PoisonedMeat
+    - chat "Of course... Poison the meat! That should take care of that Demon Dog!"
+
+    - elseif player.inventory.contains#Meat
+    - chat "Three heads won't be distracted by one piece of meat... But they do share a body..."
+
+    - elseif player.inventory.contains#MageKnowledge
+    - chat "A Demon dog.... Well if there's anything a dog loves it's meat. I only have a little bit... You can't distract 3 heads with one piece of meat... But they do share a body."
+    - give Meat
+
+    - elseif player.inventory.contains#DemonKnowledge
+    - chat "So... It was true. Darius has returned as a Demon. The Mage will want to know about this."
+
+    - else
+    - chat "Strange things have been going on lately... The wild life has left and game is scarce... I've hardly any meat!"
+
+While:
+  Script:
+    - if entity.inprox
+    - look
+    - idle
+    - else
+    - idle
