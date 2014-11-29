@@ -13,7 +13,7 @@ import com.jme3.system.android.AndroidConfigChooser.ConfigType;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
  
-public class MainActivity extends AndroidHarness{
+public class MainActivity extends AndroidHarness {
  
     /*
      * Note that you can ignore the errors displayed in this file,
